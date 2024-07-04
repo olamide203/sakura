@@ -13,7 +13,9 @@ export default function Index() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <main className="max-w-[1600px] mx-auto">
+        <Hero />
+      </main>
     </>
   );
 }
