@@ -13,7 +13,7 @@ export default function Index() {
   return (
     <>
       <Navbar />
-      <main className="max-w-[1600px] mx-auto">
+      <main className="max-w-[1600px] mx-auto overflow-x-hidden">
         <Hero />
       </main>
     </>
