@@ -11,9 +11,10 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.7",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
     "@radix-ui/react-navigation-menu": "^1.2.0",
-    "@react-hook/media-query": "^1.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
     "@remix-run/node": "^2.10.0",
     "@remix-run/react": "^2.10.0",
     "@remix-run/serve": "^2.10.0",
