@@ -1,11 +1,5 @@
-import SVGPath from "./svg";
-
 const About = () => {
-  return (
-    <div>
-      <SVGPath />
-    </div>
-  );
+  return <section></section>;
 };
 
 export default About;
