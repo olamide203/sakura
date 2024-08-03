@@ -20,7 +20,7 @@ const Hero = () => {
   });
 
   return (
-    <section className="h-full w-full px-4 sm:px-8 lg:px-10">
+    <section className="h-full w-full ">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:min-h-[calc(min(100vh,_1000px))] grid-rows-[auto_1fr] lg:grid-rows-1 h-full items-center pt-20">
         <div className="col-start-1 col-end-2 min-h-[350px] lg:min-h-[500px] flex flex-col justify-center gap-12 lg:gap-20">
           <div className="flex flex-col justify-center h-full items-center lg:items-start">
