@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Play } from "@phosphor-icons/react";
+import { Play } from "@phosphor-icons/react/Play";
 
 import { cn } from "~/lib/utils";
 
