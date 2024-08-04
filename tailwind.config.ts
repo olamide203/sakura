@@ -24,6 +24,8 @@ const config = {
         cursive: ['"playwrite ES Deco"'],
         display: ['"Space Grotesk"', "sans-serif"],
         mono: ['"Space Mono"', ...defaultTheme.fontFamily.mono],
+        sans: ["Schibsted Grotesk", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -85,4 +87,3 @@ const config = {
 } satisfies Config;
 
 export default config;
-
