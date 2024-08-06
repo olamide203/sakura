@@ -1,12 +1,11 @@
 import Reveal from "../reveal";
+import Title from "../title";
 
 const About = () => {
   return (
     <section className="flex flex-col gap-10 pt-24" id="about">
-      <div className="flex flex-col gap-4 text-lg text-neutral-900 font-inter fon-medium self-start">
-        <Reveal slide className="w-fit">
-          <h2 className="font-mono font-bold text-4xl capitalize">01. About</h2>
-        </Reveal>
+      <div className="flex flex-col gap-4 text-base md:text-lg text-neutral-900 font-inter fon-medium self-start">
+        <Title pre="01">About</Title>
         <Reveal slide className="w-fit">
           <p>
             I am a graduate of Microbiology with a strong foundation in data
@@ -26,9 +25,9 @@ const About = () => {
         <Reveal slide className="w-fit">
           <p>
             I aim to leverage my expertise to interpret data and make
-            evidence-based decisions that improve population health.
-            <br /> My background uniquely positions me to contribute effectively
-            to public health by applying advanced data analysis techniques.
+            evidence-based decisions that improve population health. My
+            background uniquely positions me to contribute effectively to public
+            health by applying advanced data analysis techniques.
           </p>
         </Reveal>
       </div>
