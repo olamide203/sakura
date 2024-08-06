@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <header className="lg:w-1/2 lg:top-0 lg:sticky lg:max-h-screen mt-40 lg:mt-0">
-      <div className="flex flex-col gap-1 justify-center items-center lg:items-start h-full">
+      <div className="flex flex-col gap-1 justify-center items-center lg:items-start h-full text-center lg:text-start">
         <Reveal slide className="w-fit">
           <p className="font-mono text-xl sm:text-2xl font-medium">
             Hi there 👋, I am
@@ -37,10 +37,8 @@ const Hero = () => {
             <Cursor cursorBlinking={cursorBlinking} />
           </h2>
         </Reveal>
-        <Reveal slide className="w-fit">
-          <div className="my-10">
-            <SocialMediaLinks />
-          </div>
+        <Reveal slide className="w-fit my-10 py-2">
+          <SocialMediaLinks />
         </Reveal>
       </div>
     </header>

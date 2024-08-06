@@ -11,7 +11,7 @@ const Reveal = ({ children, className = "", slide = false }: RevealProps) => {
     <div className={`relative overflow-hidden ${className}`}>
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: "10%" },
+          hidden: { opacity: 0, y: "20%" },
           visible: { opacity: 1, y: "0%" },
         }}
         initial="hidden"

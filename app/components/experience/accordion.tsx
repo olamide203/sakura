@@ -19,8 +19,15 @@ export function ExperienceAccordion() {
           <Reveal slide className="w-fit">
             <AccordionTrigger>
               <div className="grid items-start text-start">
-                <h3 className="text-xl text-start leading-none">
-                  {item.role} @ {item.company}
+                <h3 className="text-lg lg:text-xl text-start leading-none">
+                  {item.role} @{" "}
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    className="underline decoration-[#F4A261]"
+                  >
+                    {item.company}
+                  </a>
                 </h3>
                 <span className="leading-1">{item.duration}</span>
               </div>
@@ -28,7 +35,7 @@ export function ExperienceAccordion() {
           </Reveal>
 
           <AccordionContent>
-            <ul className="flex flex-col text-lg list-disc pl-20">
+            <ul className="flex flex-col text-base md:text-lg list-disc pl-14 lg:pl-20 gap-2">
               {item.responsibilities.map((item, id) => (
                 <li className="text-blue-600" key={id}>
                   <span className="text-neutral-900">{item}</span>
