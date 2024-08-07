@@ -5,6 +5,8 @@ import Aside from "~/components/hero/aside";
 import About from "~/components/about";
 import Projects from "~/components/projects/list";
 import Experience from "~/components/experience";
+import Tools from "~/components/tools";
+import Footer from "~/components/footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -24,7 +26,9 @@ export default function Index() {
             <Aside />
             <About />
             <Experience />
+            <Tools />
             <Projects />
+            <Footer />
           </main>
         </div>
       </div>

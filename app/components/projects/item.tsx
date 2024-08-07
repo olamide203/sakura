@@ -7,7 +7,7 @@ import { Project as ProjectProps } from "~/data/projects";
 const Project = (props: ProjectProps) => {
   return (
     <div className="flex flex-col gap-4 items-start rounded-lg w-full cursor-pointer">
-      <div className="rounded-lg overflow-hidden w-full shadow-xl">
+      <div className="rounded-lg overflow-hidden w-full shadow-lg">
         <Reveal slide>
           <AspectRatio.Root ratio={16 / 9}>
             <img
@@ -18,7 +18,7 @@ const Project = (props: ProjectProps) => {
           </AspectRatio.Root>
         </Reveal>
       </div>
-      <div className="self-start text-left flex gap-1 flex-col">
+      <div className="self-start text-left flex gap-1 flex-col my-2">
         <Reveal className="h-fit w-fit" slide>
           <h3 className="z-[999] w-full text-xl md:text-2xl lg:text-3xl font-bold capitalize text-neutral-900 font-urbanist pb-2">
             {props.title}
