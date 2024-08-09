@@ -1,4 +1,4 @@
-import { motion, MotionConfig, AnimationSequence } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 
 interface HamburgerProps {
   active: boolean;
