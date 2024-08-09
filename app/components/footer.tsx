@@ -4,13 +4,13 @@ import { Coffee } from "@phosphor-icons/react/Coffee";
 
 const Footer = () => {
   return (
-    <section className="my-24 text-base md:text-lg font-inter">
+    <section className="mt-24 mb-10 text-base md:text-lg font-mono text-center lg:text-start">
       <p>
         <Copyright className="inline font-semibold" /> 2024, Odunola Atitebi
       </p>
       <p>
-        Designed and coded with <Heart weight="fill" className="inline" /> and
-        lots of <Coffee className="inline" /> by{" "}
+        Designed and coded with <Heart className="inline" /> and lots of{" "}
+        <Coffee className="inline" /> by{" "}
         <a
           href="https://x.com/Olamide_farouq"
           className="underline decoration-[#F4A261]"

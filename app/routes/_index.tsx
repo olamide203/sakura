@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import Navbar from "~/components/navbar";
+import Navbar from "~/components/navigation/navbar";
 import Hero from "~/components/hero";
 import Aside from "~/components/hero/aside";
 import About from "~/components/about";
