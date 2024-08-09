@@ -146,7 +146,9 @@ const SideNav = () => {
                   }}
                   className="w-full capitalize text-3xl font-bold font-display text-white/75 p-2"
                 >
-                  <Link to={link.to}>{link.text}</Link>
+                  <Link to={link.to} onClick={toggleNav}>
+                    {link.text}
+                  </Link>
                 </motion.li>
               </NavigationMenuItem>
             ))}
