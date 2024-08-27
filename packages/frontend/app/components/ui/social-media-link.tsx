@@ -2,12 +2,11 @@ import { LinkedinLogo } from "@phosphor-icons/react/LinkedinLogo";
 import { XLogo } from "@phosphor-icons/react/XLogo";
 import { InstagramLogo } from "@phosphor-icons/react/InstagramLogo";
 import { GithubLogo } from "@phosphor-icons/react/GithubLogo";
-
-type platform = "github" | "linkedIn" | "x" | "instagram";
+import type { Platform } from "~/data/socials";
 
 interface SocialMediaLinkProps {
   link: string;
-  platform: platform;
+  platform: Platform;
 }
 
 const platformIcons = {

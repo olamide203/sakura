@@ -1,12 +1,16 @@
 import SocialMediaLink from "~/components/ui/social-media-link";
+import socials from "~/data/socials";
 
 const socialMediaLinks = () => {
   return (
     <div className="flex gap-4 items-center justify-start">
-      <SocialMediaLink link="https://github.com" platform="github" />
-      <SocialMediaLink link="https://github.com" platform="linkedIn" />
-      <SocialMediaLink link="https://github.com" platform="x" />
-      <SocialMediaLink link="https://github.com" platform="instagram" />
+      {socials.map((social, index) => (
+        <SocialMediaLink
+          link={social.link}
+          platform={social.platform}
+          key={index}
+        />
+      ))}
     </div>
   );
 };

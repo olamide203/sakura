@@ -1,10 +1,12 @@
 import type { MetaFunction } from "@remix-run/node";
-import Navbar from "~/components/navbar";
+import Navbar from "~/components/navigation/navbar";
 import Hero from "~/components/hero";
 import Aside from "~/components/hero/aside";
 import About from "~/components/about";
 import Projects from "~/components/projects/list";
 import Experience from "~/components/experience";
+import Tools from "~/components/tools";
+import Footer from "~/components/footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -16,7 +18,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <>
-      <div className="max-w-[1600px] mx-auto w-full px-4 sm:px-8 lg:px-10">
+      <div className="max-w-[1600px] mx-auto w-full px-4 sm:px-8 lg:px-10 subpixel-antialiased">
         <Navbar />
         <div className="lg:flex lg:justify-between lg:gap-4">
           <Hero />
@@ -24,7 +26,9 @@ export default function Index() {
             <Aside />
             <About />
             <Experience />
+            <Tools />
             <Projects />
+            <Footer />
           </main>
         </div>
       </div>
