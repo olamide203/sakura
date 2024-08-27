@@ -33,7 +33,6 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      subtitle: 'publishedAt',
       media: 'logo',
     },
   },
