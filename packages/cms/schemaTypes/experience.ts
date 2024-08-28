@@ -36,7 +36,7 @@ export default defineType({
       type: 'boolean',
     }),
     defineField({
-      name: 'achievments',
+      name: 'achievements',
       title: 'Key Achievements',
       type: 'array',
       of: [{type: 'block'}],

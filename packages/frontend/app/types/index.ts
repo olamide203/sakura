@@ -7,7 +7,7 @@ export interface Root {
   projects: Project[];
   _type: string;
   socialLinks: SocialLink[];
-  about: About[];
+  about: PortableTextBlock[];
   _updatedAt: string;
   metadata: any;
   skills: Skill[];
@@ -45,14 +45,6 @@ export interface SocialLink {
   account: string;
   url: string;
   username?: string;
-}
-
-export interface About {
-  _key: string;
-  markDefs: any[];
-  children: any[];
-  _type: string;
-  style: string;
 }
 
 export interface Skill {
