@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import SocialMediaLinks from "./social-media-links";
 import Reveal from "../reveal";
+import { useLoaderData } from "@remix-run/react";
+import { loader } from "~/routes/_index";
 
 const Hero = () => {
   const words = ["Analyst", "Scientist"];
@@ -18,6 +20,8 @@ const Hero = () => {
     onLoopDone: handleLoopDone,
   });
 
+  const data = useLoaderData<typeof loader>();
+  console.log(data);
   return (
     <header className="lg:w-1/2 lg:top-0 lg:sticky lg:max-h-screen mt-40 lg:mt-0">
       <div className="flex flex-col gap-1 justify-center items-center lg:items-start h-full text-center lg:text-start">
@@ -27,9 +31,7 @@ const Hero = () => {
           </p>
         </Reveal>
         <Reveal slide className="w-fit">
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold">
-            Odunola Atitebi
-          </h1>
+          <h1 className="font-display text-5xl sm:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold"></h1>
         </Reveal>
         <Reveal slide className="w-fit">
           <h2 className="font-display font-semibold text-3xl lg:text-4xl xl:text-6xl">

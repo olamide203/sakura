@@ -7,6 +7,18 @@ import Projects from "~/components/projects/list";
 import Experience from "~/components/experience";
 import Tools from "~/components/tools";
 import Footer from "~/components/footer";
+import { getPortfolio } from "~/sanity";
+import { json } from "@remix-run/node";
+
+export const loader = async () => {
+  try {
+    const data = await getPortfolio();
+    return json(data);
+  } catch (err) {
+    console.log(err);
+    return json({ error: "Failed to load data" }, { status: 500 });
+  }
+};
 
 export const meta: MetaFunction = () => {
   return [

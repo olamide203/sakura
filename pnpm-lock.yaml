@@ -78,6 +78,12 @@ importers:
       '@remix-run/serve':
         specifier: ^2.10.0
         version: 2.11.2(typescript@5.5.4)
+      '@sanity/client':
+        specifier: ^6.21.3
+        version: 6.21.3(debug@4.3.6)
+      '@sanity/image-url':
+        specifier: ^1.0.2
+        version: 1.0.2
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
