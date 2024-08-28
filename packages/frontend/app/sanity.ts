@@ -61,9 +61,14 @@ export const getPortfolio = async () => {
     responsibilities
   },
   skills[]-> {
-    name,
-    logo,
-    url
+    title,
+    link,
+    logo {
+      asset->{
+        url,
+        metadata
+      }
+    }
   },
   metadata-> {
     ...,
