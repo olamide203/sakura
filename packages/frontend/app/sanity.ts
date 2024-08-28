@@ -17,10 +17,10 @@ export const getPortfolio = async () => {
   const query = `*[_type=="portfolio"][0]{
   ...,
   mainImage { 
+    ...,
     asset->{
-      url,
-      metadata
-    }
+      ...,
+    },
   },
   about[] {
     ...,
@@ -37,7 +37,8 @@ export const getPortfolio = async () => {
   projects[]-> {
     ...,
     mainImage { 
-      asset->{ url, metadata }
+      ...,
+      asset->{ ..., }
     },
     description[] {
       ...,
@@ -57,16 +58,13 @@ export const getPortfolio = async () => {
     companyURL,
     jobTitle,
     isCurrentJob,
-    description,
-    responsibilities
   },
   skills[]-> {
-    title,
+    name,
     link,
     logo {
       asset->{
-        url,
-        metadata
+        ...,
       }
     }
   },

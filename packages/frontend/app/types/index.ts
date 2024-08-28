@@ -1,62 +1,62 @@
-interface Portfolio {
-  _id: string;
-  _type: "portfolio";
-  name: string;
-  mainImage: {
-    _type: "image";
-    asset: {
-      _ref: string;
-      _type: "reference";
-    };
-    hotspot?: boolean;
-  };
-  about: BlockContent[];
-  socialLinks: SocialLink[];
-  projects: Project[];
+import { PortableTextBlock, ImageMetadata, ImageAsset, Image } from "sanity";
+
+export interface Root {
   experiences: Experience[];
-  skills: Technology[];
-  metadata: SiteMeta;
-  publishedAt: string;
+  mainImage: Image;
+  _id: string;
+  projects: Project[];
+  _type: string;
+  socialLinks: SocialLink[];
+  about: About[];
+  _updatedAt: string;
+  metadata: any;
+  skills: Skill[];
+  _createdAt: string;
+  _rev: string;
+  name: string;
 }
 
-interface SocialLink {
+export interface Experience {
+  achievements: any[];
+  company: string;
+  companyURL: string;
+  jobTitle: string;
+  isCurrentJob: boolean;
+  description: any;
+  responsibilities: any;
+}
+
+export interface Project {
+  description: any[];
+  _createdAt: string;
+  _updatedAt: string;
+  technologies: any;
+  mainImage: Image;
+  publishedAt: string;
+  _type: string;
   _id: string;
-  _type: "social";
-  account: "x" | "github" | "linkedIn" | "instagram";
+  title: string;
+  slug: any[];
+  _rev: string;
+  link: string;
+}
+
+export interface SocialLink {
+  account: string;
   url: string;
   username?: string;
 }
 
-interface Project {
-  _type: "project";
-  // Define other properties as necessary
-}
-
-interface Experience {
-  _type: "experience";
-  // Define other properties as necessary
-}
-
-interface Technology {
-  _type: "technology";
-  // Define other properties as necessary
-}
-
-interface SiteMeta {
-  _type: "siteMeta";
-  // Define other properties as necessary
-}
-
-interface BlockContent {
-  _type: "block";
-  children: {
-    _type: "span";
-    text: string;
-    marks?: string[];
-  }[];
-  markDefs?: {
-    _type: string;
-    [key: string]: any;
-  }[];
+export interface About {
+  _key: string;
+  markDefs: any[];
+  children: any[];
+  _type: string;
   style: string;
+}
+
+export interface Skill {
+  name: string;
+  link: string;
+  logo: Image;
 }

@@ -36,14 +36,8 @@ export default defineType({
       type: 'boolean',
     }),
     defineField({
-      name: 'achievements',
+      name: 'achievments',
       title: 'Key Achievements',
-      type: 'array',
-      of: [{type: 'string'}],
-    }),
-    defineField({
-      name: 'description',
-      title: 'Job Description',
       type: 'array',
       of: [{type: 'block'}],
     }),
