@@ -8,16 +8,12 @@ import Experience from "~/components/experience";
 import Tools from "~/components/tools";
 import Footer from "~/components/footer";
 import { getPortfolio } from "~/sanity";
-import { json } from "@remix-run/node";
+import { json, TypedResponse } from "@remix-run/node";
+import { Portfolio } from "~/types";
 
-export const loader = async () => {
-  try {
-    const data = await getPortfolio();
-    return json(data);
-  } catch (err) {
-    console.log(err);
-    return json({ error: "Failed to load data" }, { status: 500 });
-  }
+export const loader = async (): Promise<TypedResponse<Portfolio>> => {
+  const data = await getPortfolio();
+  return json(data);
 };
 
 export const meta: MetaFunction = () => {

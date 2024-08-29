@@ -1,54 +1,64 @@
-import { PortableTextBlock, ImageMetadata, ImageAsset, Image } from "sanity";
+import { PortableTextBlock, ImageAsset, Slug } from "sanity";
 
-export interface Root {
+interface Image {
+  asset: ImageAsset;
+  sha1hash: string;
+  url: string;
+  _id: string;
+  mimeType: string;
+}
+
+export interface Portfolio {
+  name: string;
   experiences: Experience[];
   mainImage: Image;
-  _id: string;
   projects: Project[];
-  _type: string;
   socialLinks: SocialLink[];
   about: PortableTextBlock[];
-  _updatedAt: string;
   metadata: any;
   skills: Skill[];
-  _createdAt: string;
-  _rev: string;
-  name: string;
+  _id: string;
 }
 
 export interface Experience {
-  achievements: any[];
+  achievements: PortableTextBlock[];
   company: string;
   companyURL: string;
-  jobTitle: string;
   isCurrentJob: boolean;
-  description: any;
-  responsibilities: any;
+  jobTitle: string;
+  publishedAt: string;
+  skills: ExperienceSkill[];
+  startDate: string;
+  endDate: string;
+  _id: string;
 }
 
 export interface Project {
-  description: any[];
-  _createdAt: string;
-  _updatedAt: string;
-  technologies: any;
+  description: PortableTextBlock[];
+  technologies: ExperienceSkill[];
   mainImage: Image;
   publishedAt: string;
-  _type: string;
-  _id: string;
   title: string;
-  slug: any[];
-  _rev: string;
+  slug: Slug;
   link: string;
+  _id: string;
 }
+
+export type Account = "x" | "instagram" | "linkedIn" | "github";
 
 export interface SocialLink {
-  account: string;
+  account: Account;
   url: string;
   username?: string;
+  _id: string;
 }
 
-export interface Skill {
+export interface ExperienceSkill {
   name: string;
+  _id: string;
+}
+
+export interface Skill extends ExperienceSkill {
   link: string;
   logo: Image;
 }

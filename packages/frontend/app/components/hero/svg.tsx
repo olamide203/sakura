@@ -1,10 +1,20 @@
+import { useLoaderData } from "@remix-run/react";
+import { useEffect, useState } from "react";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
+import { loader } from "~/routes/_index";
 
-export interface HeroSVGProps {
-  imageURL: string;
-}
+const HeroSVG: React.FC = () => {
+  const [isLoaded, setIsLoadded] = useState(false);
 
-const HeroSVG: React.FC<HeroSVGProps> = ({ imageURL }) => {
+  useEffect(() => {
+    const image = new Image();
+    image.onload = () => {
+      setIsLoadded(true);
+    };
+    image.src = mainImage.asset.url;
+  }, []);
+
+  const { mainImage } = useLoaderData<typeof loader>();
   return (
     <div className="relative w-full">
       <AspectRatio ratio={1}>
@@ -47,7 +57,9 @@ const HeroSVG: React.FC<HeroSVGProps> = ({ imageURL }) => {
             width="100%"
             height="100%"
             preserveAspectRatio="xMidYMid slice"
-            href={imageURL}
+            href={
+              isLoaded ? mainImage.asset.url : mainImage.asset.metadata.lqip
+            }
             clipPath="url(#border)"
           />
         </svg>

@@ -1,5 +1,6 @@
 import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
+import { Portfolio } from "./types";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 export const sanity = createClient({
@@ -13,7 +14,7 @@ export const urlFor = (source: SanityImageSource) => {
   return imageUrlBuilder(sanity).image(source);
 };
 
-export const getPortfolio = async () => {
+export const getPortfolio = async (): Promise<Portfolio> => {
   const query = `*[_type=="portfolio"][0]{
   ...,
   mainImage { 
@@ -32,7 +33,8 @@ export const getPortfolio = async () => {
   socialLinks[]-> {
     account,
     url,
-    username
+    username,
+    _id
   },
   projects[]-> {
     ...,
@@ -49,19 +51,20 @@ export const getPortfolio = async () => {
     },
     technologies[]-> {
       name,
-      link 
+      _id 
     }
   },
   experiences[]-> { 
-    achievements,
-    company,
-    companyURL,
-    jobTitle,
-    isCurrentJob,
-  },
+    ...,
+    skills[]-> {
+      name,
+      _id
+      },
+      },
   skills[]-> {
     name,
     link,
+    _id,
     logo {
       asset->{
         ...,
@@ -73,6 +76,6 @@ export const getPortfolio = async () => {
   }
 }`;
 
-  const data = await sanity.fetch(query);
+  const data = await sanity.fetch<Portfolio>(query);
   return data;
 };
