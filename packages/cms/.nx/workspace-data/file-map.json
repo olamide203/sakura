@@ -1,0 +1,76 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.6.3",
+  "deps": {
+    "@sanity/vision": "^3.55.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3.55.0",
+    "sanity-plugin-sitemeta": "^2.0.2",
+    "styled-components": "^6.1.8",
+    "@sanity/eslint-config-studio": "^4.0.0",
+    "@types/react": "^18.0.25",
+    "eslint": "^8.6.0",
+    "prettier": "^3.0.2",
+    "typescript": "^5.1.6"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".eslintrc",
+        "hash": "15307582140557770818"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "16296968890606805579"
+      },
+      {
+        "file": "README.md",
+        "hash": "14208145806948125865"
+      },
+      {
+        "file": "package.json",
+        "hash": "1100482455199061081"
+      },
+      {
+        "file": "sanity.cli.ts",
+        "hash": "944313125401356444"
+      },
+      {
+        "file": "sanity.config.ts",
+        "hash": "15653718819950050497"
+      },
+      {
+        "file": "schemaTypes/author.ts",
+        "hash": "15403681427526409676"
+      },
+      {
+        "file": "schemaTypes/blockContent.ts",
+        "hash": "1163844485163933464"
+      },
+      {
+        "file": "schemaTypes/category.ts",
+        "hash": "2366847299382175756"
+      },
+      {
+        "file": "schemaTypes/index.ts",
+        "hash": "1031517191035946325"
+      },
+      {
+        "file": "schemaTypes/post.ts",
+        "hash": "10164256994478419078"
+      },
+      {
+        "file": "static/.gitkeep",
+        "hash": "5458914229412634645"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "13445128604194394570"
+      }
+    ]
+  }
+}
