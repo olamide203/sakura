@@ -30,7 +30,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="bg-white dark:bg-neutral-900 bg-[url('/noise-5.svg')] ">
+      <body className="bg-white dark:bg-neutral-900 bg-[url('/noise.svg')] ">
         {children}
         <ScrollRestoration />
         <Scripts />
