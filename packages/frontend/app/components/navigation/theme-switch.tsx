@@ -12,7 +12,7 @@ const ThemeSwitch = () => {
   return (
     <button
       onClick={handleClick}
-      className="relative aspect-square h-[48px] border rounded-lg border-black dark:border-white grid items-center justify-center z-20"
+      className="relative aspect-square h-[48px] border rounded-lg border-black dark:border-white grid items-center justify-center z-20 bg-white dark:bg-neutral-900"
     >
       {theme == "light" ? <Moon /> : <Sun />}
     </button>
