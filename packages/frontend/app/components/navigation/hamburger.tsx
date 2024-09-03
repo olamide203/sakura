@@ -8,16 +8,16 @@ interface HamburgerProps {
 export const HAMBURGER_VARIANTS = {
   top: {
     open: {
-      top: ["35%", "50%", "50%"],
+      top: ["32%", "50%", "50%"],
       rotate: ["0deg", "0deg", "45deg"],
     },
     close: {
-      top: ["50%", "50%", "35%"],
+      top: ["50%", "50%", "32%"],
       rotate: ["45deg", "0deg", "0deg"],
     },
     initial: {
       left: "50%",
-      top: "35%",
+      top: "32%",
       x: "-50%",
       y: "-50%",
     },
@@ -38,16 +38,16 @@ export const HAMBURGER_VARIANTS = {
   },
   bottom: {
     open: {
-      bottom: ["35%", "50%", "50%"],
+      bottom: ["32%", "50%", "50%"],
       rotate: ["0deg", "0deg", "-45deg"],
     },
     close: {
-      bottom: ["50%", "50%", "35%"],
+      bottom: ["50%", "50%", "32%"],
       rotate: ["-45deg", "0deg", "0deg"],
     },
     initial: {
       left: "50%",
-      bottom: "35%",
+      bottom: "32%",
       x: "-50%",
       y: "50%",
     },
@@ -63,23 +63,23 @@ const Hamburger = ({ active, onActiveChange }: HamburgerProps) => {
       }}
     >
       <motion.button
-        className={`relative h-16 aspect-square cursor-pointer ${
-          active && "bg-white/20 hover:rounded-bl-lg hover:rounded-tr-lg"
+        className={`relative h-[48px] aspect-square cursor-pointer ${
+          active && "bg-white/20 hover:rounded-bl-lg rounded-tr-lg"
         }`}
         onClick={onActiveChange}
         tabIndex={1}
       >
         <motion.span
           style={HAMBURGER_VARIANTS.top.initial}
-          className="top h-1 w-10 absolute rounded bg-white"
+          className="top h-[2px] w-8 absolute rounded bg-white"
         />
         <motion.span
           style={HAMBURGER_VARIANTS.middle.initial}
-          className="middle h-1 w-10 absolute rounded bg-white"
+          className="middle h-[2px] w-8 absolute rounded bg-white"
         />
         <motion.span
           style={HAMBURGER_VARIANTS.bottom.initial}
-          className="bottom h-1 w-10 absolute rounded bg-white"
+          className="bottom h-[2px] w-8 absolute rounded bg-white"
         />
       </motion.button>
     </MotionConfig>

@@ -10,7 +10,7 @@ export const components: PortableTextComponents = {
   },
   block: {
     normal: ({ children }) => (
-      <p className="text-base lg:text-lg leading-relaxed tracking-wide py-2">
+      <p className="text-base lg:text-lg leading-relaxed tracking-wide py-2 text-neutral-900 dark:text-white">
         {children}
       </p>
     ),

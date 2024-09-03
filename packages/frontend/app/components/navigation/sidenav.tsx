@@ -96,15 +96,15 @@ const SIDENAV_VARIANTS = {
     paddingBottom: "64px",
   },
   close: {
-    height: "64px",
-    width: "64px",
+    height: "48px",
+    width: "48px",
     paddingTop: 0,
     paddingBottom: 0,
   },
 
   initial: {
-    height: "64px",
-    width: "64px",
+    height: "48px",
+    width: "48px",
   },
 };
 
@@ -126,7 +126,7 @@ const SideNav = () => {
 
   const scope = useMenuAnimation(open);
   return (
-    <div className="relative" ref={scope}>
+    <div className="relative w-fit z-30" ref={scope}>
       <Hamburger active={open} onActiveChange={toggleNav} />
       <NavigationMenu className="absolute top-0 right-0 -z-10 rounded-lg overflow-hidden ">
         <NavigationMenuList
@@ -135,7 +135,7 @@ const SideNav = () => {
         >
           <motion.ul
             style={SIDENAV_VARIANTS.initial}
-            className={`overflow-hidden bg-[#F4A261]`}
+            className={`overflow-hidden bg-[#F4A261] dark:bg-blue-600`}
           >
             {navLinks.map((link) => (
               <NavigationMenuItem asChild key={link.id}>
