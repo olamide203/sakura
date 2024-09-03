@@ -5,8 +5,9 @@ import { Moon } from "@phosphor-icons/react/Moon";
 const ThemeSwitch = () => {
   const { toggle, theme } = useThemeContext((s) => s);
   const handleClick = () => {
-    document.documentElement.classList.toggle("dark");
     toggle();
+    // persist new theme to local storage
+    localStorage.setItem("theme", theme == "light" ? "dark" : "light");
   };
   return (
     <button

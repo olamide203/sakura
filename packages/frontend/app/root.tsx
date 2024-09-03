@@ -7,7 +7,7 @@ import {
 } from "@remix-run/react";
 import { LinksFunction } from "@remix-run/node";
 import appStylesHref from "./tailwind.css?url";
-import { useThemeContext } from "./hooks/useTheme";
+import { Theme, useThemeContext } from "./hooks/useTheme";
 import useMediaQuery from "./hooks/useMediaQuery";
 import { useEffect } from "react";
 
@@ -20,8 +20,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const setTheme = useThemeContext((s) => s.setTheme);
   const theme = useThemeContext((s) => s.theme);
   useEffect(() => {
-    prefersDarkMode ? setTheme("dark") : setTheme("light");
+    const theme = localStorage.getItem("theme") as Theme;
+    if (theme) {
+      setTheme(theme);
+    } else {
+      prefersDarkMode ? setTheme("dark") : setTheme("light");
+    }
   }, [prefersDarkMode]);
+
   return (
     <html lang="en" className={`${theme}`}>
       <head>
