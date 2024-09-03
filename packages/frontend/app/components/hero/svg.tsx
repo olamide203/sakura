@@ -2,8 +2,10 @@ import { useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
 import { loader } from "~/routes/_index";
+import { useThemeContext } from "~/hooks/useTheme";
 
 const HeroSVG: React.FC = () => {
+  const { theme } = useThemeContext((s) => s);
   const [isLoaded, setIsLoadded] = useState(false);
 
   useEffect(() => {
@@ -52,7 +54,12 @@ const HeroSVG: React.FC = () => {
               />
             </clipPath>
           </defs>
-          <use width="100%" height="100%" href="#border_path" fill="#F4A261" />
+          <use
+            width="100%"
+            height="100%"
+            href="#border_path"
+            fill={theme == "light" ? "#F4A261" : "#555D50"}
+          />
           <image
             width="100%"
             height="100%"

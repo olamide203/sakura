@@ -9,9 +9,9 @@ const About = () => {
   const { about } = useLoaderData<typeof loader>();
   return (
     <section className="flex flex-col gap-10 pt-24" id="about">
-      <div className="flex flex-col gap-4 text-base md:text-lg text-neutral-900 font-inter fon-medium self-start">
+      <div className="flex flex-col gap-4 text-base md:text-lg text-neutral-900 dark:text-white font-inter fon-medium self-start">
         <Title pre="01">About</Title>
-        <Reveal className="w-full" slide>
+        <Reveal className="w-full">
           <PortableText value={about} components={components} />
         </Reveal>
       </div>

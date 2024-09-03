@@ -4,6 +4,7 @@ import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import Reveal from "../reveal";
 import { Project as ProjectProps } from "~/types";
 import { PortableText } from "@portabletext/react";
+import { components } from "../block-content/block-components";
 
 const Project = (props: ProjectProps) => {
   return (
@@ -21,12 +22,12 @@ const Project = (props: ProjectProps) => {
       </div>
       <div className="self-start text-left flex gap-1 flex-col my-2">
         <Reveal className="h-fit w-fit" slide>
-          <h3 className="z-[999] w-full text-xl md:text-2xl lg:text-3xl font-bold capitalize text-neutral-900 font-urbanist pb-2">
+          <h3 className="z-[999] w-full text-xl md:text-2xl lg:text-3xl font-bold capitalize text-neutral-900 dark:text-white font-urbanist pb-2">
             {props.title}
           </h3>
         </Reveal>
         <div className="flex flex-col gap-4 md:text-lg text-neutral-900 font-inter text-base">
-          <PortableText value={props.description} />
+          <PortableText value={props.description} components={components} />
         </div>
         <Reveal slide className="w-fit h-fit">
           <div className="mt-4 flex items-center gap-2">
@@ -44,13 +45,13 @@ const Project = (props: ProjectProps) => {
           <div className="mt-4 flex items-center gap-4">
             <a
               href={props.link}
-              className="text-2xl text-neutral-900 hover:text-blue-400"
+              className="text-2xl text-neutral-900 dark:text-white hover:text-blue-400"
             >
               <GithubLogo />
             </a>
             <a
               href={props.link}
-              className="text-2xl text-neutral-900 hover:text-blue-400"
+              className="text-2xl text-neutral-900 dark:text-white hover:text-blue-400"
             >
               <ArrowSquareOut />
             </a>

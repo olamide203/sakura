@@ -22,7 +22,7 @@ const Reveal = ({ children, className = "", slide = false }: RevealProps) => {
       </motion.div>
       {slide && (
         <motion.div
-          className="absolute inset-0 bg-[#F4A261] z-20"
+          className="absolute inset-0 bg-[#F4A261] dark:bg-blue-600 z-20"
           variants={{
             hidden: { left: 0 },
             visible: { left: "100%" },

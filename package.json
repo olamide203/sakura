@@ -5,7 +5,8 @@
     "sanity": "^3.55.0"
   },
   "scripts": {
-    "deploy:cms": "lerna run deploy --scope=sakura"
+    "deploy:cms": "lerna run deploy --scope=sakura",
+    "dev:frontend": "pnpm dlx lerna run dev --scope=frontend"
   },
   "devDependencies": {
     "lerna": "^8.1.8"

@@ -26,7 +26,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <>
-      <div className="max-w-[1600px] mx-auto w-full px-4 sm:px-8 lg:px-10 subpixel-antialiased">
+      <div className=" max-w-[1600px] mx-auto w-full px-4 sm:px-8 lg:px-10 subpixel-antialiased">
         <Navbar />
         <div className="lg:flex lg:justify-between lg:gap-4">
           <Hero />

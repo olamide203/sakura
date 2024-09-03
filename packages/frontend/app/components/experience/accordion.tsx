@@ -21,7 +21,7 @@ const components: PortableTextComponents = {
   listItem: {
     bullet: ({ children }) => (
       <li className="text-blue-600">
-        <span className="text-neutral-900">{children}</span>
+        <span className="text-neutral-900 dark:text-white">{children}</span>
       </li>
     ),
   },

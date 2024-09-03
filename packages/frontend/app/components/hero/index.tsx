@@ -30,7 +30,7 @@ const Hero = () => {
           </p>
         </Reveal>
         <Reveal slide className="w-fit">
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold">
+          <h1 className="font-display text-5xl sm:text-7xl lg:text-6xl xl:text-7xl font-bold">
             {name}
           </h1>
         </Reveal>
@@ -40,7 +40,12 @@ const Hero = () => {
             <Cursor cursorBlinking={cursorBlinking} />
           </h2>
         </Reveal>
-        <Reveal slide className="w-fit my-10 py-2">
+        <Reveal slide className="w-fit my-10">
+          <button className="border-[2px] border-neutral-900 dark:border-white px-8 py-4 rounded-full">
+            My Resume
+          </button>
+        </Reveal>
+        <Reveal slide className="w-fit my-20 py-2 justify-self-end ">
           <SocialMediaLinks />
         </Reveal>
       </div>
