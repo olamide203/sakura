@@ -7,7 +7,7 @@ import { loader } from "~/routes/_index";
 import { ArrowUpRight } from "@phosphor-icons/react/ArrowUpRight";
 
 const Hero = () => {
-  const words = ["Analyst", "Scientist"];
+  /* const words = ["Analyst", "Scientist"];
   const [cursorBlinking, setCursorBlinking] = useState(false);
   const handleLoopDone = () => {
     setCursorBlinking(true);
@@ -19,7 +19,7 @@ const Hero = () => {
     deleteSpeed: 50,
     delaySpeed: 1000,
     onLoopDone: handleLoopDone,
-  });
+  });  */
 
   const { name } = useLoaderData<typeof loader>();
   return (
@@ -37,8 +37,8 @@ const Hero = () => {
         </Reveal>
         <Reveal slide className="w-fit">
           <h2 className="font-display font-semibold text-3xl lg:text-4xl xl:text-6xl">
-            A Data {text}
-            <Cursor cursorBlinking={cursorBlinking} />
+            A Data Analyst
+            {/* <Cursor cursorBlinking={cursorBlinking} /> */}
           </h2>
         </Reveal>
         <Reveal slide className="w-fit my-10">
