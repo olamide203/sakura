@@ -58,14 +58,14 @@ export function ExperienceAccordion() {
                 <span className="leading-1">
                   {new Date(item.startDate).toLocaleDateString(
                     "en-US",
-                    dateOptionns,
+                    dateOptionns
                   )}
                   {" - "}
                   {item.isCurrentJob
                     ? "Present"
                     : new Date(item.endDate).toLocaleDateString(
                         "en-US",
-                        dateOptionns,
+                        dateOptionns
                       )}
                 </span>
               </div>
