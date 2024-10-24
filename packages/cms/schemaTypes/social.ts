@@ -53,6 +53,7 @@ export default defineType({
       name: 'username',
       title: 'Username',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

@@ -9,6 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'slug',
@@ -18,6 +19,7 @@ export default defineType({
         source: 'title',
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'mainImage',
@@ -26,23 +28,27 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'technologies',
       title: 'Technologies',
       type: 'array',
       of: [{type: 'reference', to: {type: 'technology'}}],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
       title: 'Discription',
       type: 'array',
       of: [{type: 'block'}],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'repository',
@@ -53,6 +59,7 @@ export default defineType({
       name: 'link',
       title: 'Project Link',
       type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
   ],
 

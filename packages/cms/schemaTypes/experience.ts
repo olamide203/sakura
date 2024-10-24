@@ -9,11 +9,13 @@ export default defineType({
       name: 'jobTitle',
       title: 'Job Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'company',
       title: 'Company',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'companyURL',
@@ -24,6 +26,7 @@ export default defineType({
       name: 'startDate',
       title: 'Start Date',
       type: 'date',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'endDate',
@@ -40,11 +43,13 @@ export default defineType({
       title: 'Key Achievements',
       type: 'array',
       of: [{type: 'block'}],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'skills',
       title: 'Skills Used',
       type: 'array',
+      validation: (Rule) => Rule.required(),
       of: [{type: 'reference', to: [{type: 'technology', title: 'Technology'}]}],
     }),
     defineField({
