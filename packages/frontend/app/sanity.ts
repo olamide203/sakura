@@ -54,7 +54,7 @@ export const getPortfolio = async (): Promise<Portfolio> => {
       _id 
     }
   },
-  experiences[]-> { 
+  experiences[]-> | order(publishedAt desc) { 
     ...,
     skills[]-> {
       name,
