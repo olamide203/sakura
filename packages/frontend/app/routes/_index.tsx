@@ -39,7 +39,6 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     SiteVerificationId,
     manifest,
   } = data.metadata;
-  console.log(image);
   const metaTags = [
     { title: title || ogTitle },
     { name: "description", content: description || ogDescription },
