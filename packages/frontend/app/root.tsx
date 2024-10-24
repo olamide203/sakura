@@ -9,7 +9,7 @@ import { LinksFunction } from "@remix-run/node";
 import appStylesHref from "./tailwind.css?url";
 import { Theme, useThemeContext } from "./hooks/useTheme";
 import useMediaQuery from "./hooks/useMediaQuery";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: appStylesHref },
@@ -20,13 +20,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const setTheme = useThemeContext((s) => s.setTheme);
   const theme = useThemeContext((s) => s.theme);
   useEffect(() => {
-    const theme = localStorage.getItem("theme") as Theme;
-    if (theme) {
-      setTheme(theme);
+    const storedTheme = localStorage.getItem("theme") as Theme;
+    if (storedTheme) {
+      setTheme(storedTheme);
     } else {
       prefersDarkMode ? setTheme("dark") : setTheme("light");
     }
-  }, [prefersDarkMode]);
+  }, [prefersDarkMode, setTheme]);
 
   return (
     <html lang="en" className={`${theme}`}>
