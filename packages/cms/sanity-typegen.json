@@ -1,0 +1,5 @@
+{
+  "path": "../frontend/app/sanity.ts",
+  "schema": "schema.json",
+  "generates": "../frontend/app/types/index.ts"
+}

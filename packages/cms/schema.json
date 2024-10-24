@@ -365,7 +365,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "mainImage": {
         "type": "objectAttribute",
@@ -427,7 +427,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "about": {
         "type": "objectAttribute",
@@ -606,7 +606,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "socialLinks": {
         "type": "objectAttribute",
@@ -650,7 +650,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "projects": {
         "type": "objectAttribute",
@@ -694,7 +694,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "experiences": {
         "type": "objectAttribute",
@@ -738,7 +738,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "skills": {
         "type": "objectAttribute",
@@ -782,7 +782,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "metadata": {
         "type": "objectAttribute",
@@ -812,14 +812,14 @@
           },
           "dereferencesTo": "siteMeta"
         },
-        "optional": true
+        "optional": false
       },
       "publishedAt": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -888,14 +888,14 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "username": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -939,7 +939,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "slug": {
         "type": "objectAttribute",
@@ -947,7 +947,7 @@
           "type": "inline",
           "name": "slug"
         },
-        "optional": true
+        "optional": false
       },
       "mainImage": {
         "type": "objectAttribute",
@@ -1009,7 +1009,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "technologies": {
         "type": "objectAttribute",
@@ -1053,14 +1053,14 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "publishedAt": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "description": {
         "type": "objectAttribute",
@@ -1239,7 +1239,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "repository": {
         "type": "objectAttribute",
@@ -1253,7 +1253,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -1297,7 +1297,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "logo": {
         "type": "objectAttribute",
@@ -1359,14 +1359,14 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "publishedAt": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "link": {
         "type": "objectAttribute",
@@ -1417,14 +1417,14 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "company": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "companyURL": {
         "type": "objectAttribute",
@@ -1438,7 +1438,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "endDate": {
         "type": "objectAttribute",
@@ -1631,7 +1631,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "skills": {
         "type": "objectAttribute",
@@ -1675,14 +1675,14 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "publishedAt": {
         "type": "objectAttribute",
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -2251,7 +2251,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "slug": {
         "type": "objectAttribute",
@@ -2259,7 +2259,7 @@
           "type": "inline",
           "name": "slug"
         },
-        "optional": true
+        "optional": false
       },
       "image": {
         "type": "objectAttribute",
@@ -2321,7 +2321,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "bio": {
         "type": "objectAttribute",
@@ -2463,7 +2463,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       }
     }
   },
@@ -2485,7 +2485,7 @@
           "value": {
             "type": "string"
           },
-          "optional": true
+          "optional": false
         },
         "source": {
           "type": "objectAttribute",
@@ -2612,7 +2612,7 @@
           "value": {
             "type": "string"
           },
-          "optional": true
+          "optional": false
         },
         "image": {
           "type": "objectAttribute",
@@ -2674,7 +2674,7 @@
               }
             }
           },
-          "optional": true
+          "optional": false
         },
         "ogType": {
           "type": "objectAttribute",
@@ -2818,7 +2818,7 @@
         "value": {
           "type": "string"
         },
-        "optional": true
+        "optional": false
       },
       "image": {
         "type": "objectAttribute",
@@ -2880,7 +2880,7 @@
             }
           }
         },
-        "optional": true
+        "optional": false
       },
       "ogType": {
         "type": "objectAttribute",

@@ -1,7 +1,8 @@
 import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
-import { Portfolio } from "./types";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { defineQuery } from "groq";
+import { PortfolioQueryResult } from "./types";
 
 export const sanity = createClient({
   projectId: "k5cl2l8h",
@@ -14,8 +15,8 @@ export const urlFor = (source: SanityImageSource) => {
   return imageUrlBuilder(sanity).image(source);
 };
 
-export const getPortfolio = async (): Promise<Portfolio> => {
-  const query = `*[_type=="portfolio"][0]{
+export const getPortfolio = async (): Promise<PortfolioQueryResult> => {
+  const portfolioQuery = defineQuery(`*[_type=="portfolio"][0]{
   ...,
   mainImage { 
     ...,
@@ -54,13 +55,13 @@ export const getPortfolio = async (): Promise<Portfolio> => {
       _id 
     }
   },
-  experiences[]-> | order(publishedAt desc) { 
+  "experiences": *[_type == "experience"] | order(publishedAt desc){
     ...,
     skills[]-> {
       name,
       _id
       },
-      },
+      }  ,
   skills[]-> {
     name,
     link,
@@ -73,9 +74,14 @@ export const getPortfolio = async (): Promise<Portfolio> => {
   },
   metadata-> {
     ...,
+    image { 
+    ...,
+    asset->{
+      ...,
+    },
+  },
   }
-}`;
+}`);
 
-  const data = await sanity.fetch<Portfolio>(query);
-  return data;
+  return await sanity.fetch(portfolioQuery);
 };
