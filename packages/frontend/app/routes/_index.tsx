@@ -48,17 +48,24 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     { property: "og:type", content: ogType || "website" },
     { property: "og:locale", content: locale },
     { property: "og:site_name", content: siteName },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: ogTitle || title },
+    { name: "twitter:description", content: ogDescription || description },
+    { name: "twitter:site", content: "@nana_fridauz_i" },
+    { name: "twitter:creator", content: "@olamide_farouq" },
   ];
 
   if (image && image.asset) {
-    metaTags.push({ property: "og:image", content: image.asset.url });
+    metaTags.push(
+      { property: "og:image", content: image.asset.url },
+      { name: "twitter:image", content: image.asset.url },
+    );
   }
   // Conditionally add PWA and Google Analytics meta tags
   if (isPwa) {
     if (manifest) {
       // If manifest exists, add manifest-specific meta tags
       metaTags.push(
-        { rel: "manifest", href: manifest.start_url || "/manifest.json" }, // Fallback for start_url
         {
           name: "application-name",
           content: manifest.short_name || "Odunola",
@@ -68,7 +75,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
           name: "background-color",
           content: manifest.background_color || "#ffffff",
         },
-        { name: "display", content: manifest.display || "standalone" }
+        { name: "display", content: manifest.display || "standalone" },
       );
     }
   }
