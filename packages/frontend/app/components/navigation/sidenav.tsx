@@ -135,7 +135,7 @@ const SideNav = () => {
         >
           <motion.ul
             style={SIDENAV_VARIANTS.initial}
-            className={`overflow-hidden bg-[#F4A261] dark:bg-blue-600`}
+            className={`overflow-hidden bg-[#FFB26F] dark:bg-blue-600 z-20 shadow-lg`}
           >
             {navLinks.map((link) => (
               <NavigationMenuItem asChild key={link.id}>
@@ -144,7 +144,7 @@ const SideNav = () => {
                   whileHover={{
                     color: "#FFFFFF",
                   }}
-                  className="w-full capitalize text-3xl font-bold font-display text-white/75 p-2"
+                  className="w-full capitalize text-3xl font-bold font-display text-white/80 p-2"
                 >
                   <Link to={link.to} onClick={toggleNav}>
                     {link.text}
