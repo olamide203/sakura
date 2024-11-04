@@ -25,7 +25,7 @@ export default function Navbar() {
       whileHover={{ y: 0 }}
       animate={hidden ? "hidden" : "visible"}
     >
-      <div className="w-24 h-full">
+      <div className="w-24 h-fit my-auto">
         <AspectRatio ratio={255.701 / 106.4}>
           <Logo />
         </AspectRatio>
