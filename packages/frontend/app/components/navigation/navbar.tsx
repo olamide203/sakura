@@ -21,7 +21,7 @@ export default function Navbar() {
     <motion.div
       variants={{ hidden: { y: "-100%" }, visible: { y: 0 } }}
       transition={{ duration: 0.35, ease: easeInOut }}
-      className="max-w-[1600px] w-full fixed mx-auto inset-0 top-0 z-20 flex items-center justify-between px-4 lg:px-10 h-20 font-inter py-2"
+      className="max-w-[1600px] w-full fixed mx-auto inset-0 top-0 z-20 flex items-center justify-between px-4 lg:px-10 h-20 font-inter py-2 bg-white dark:bg-neutral-900 bg-[url('/noise.svg')]"
       whileHover={{ y: 0 }}
       animate={hidden ? "hidden" : "visible"}
     >
