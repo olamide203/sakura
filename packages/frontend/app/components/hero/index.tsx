@@ -43,7 +43,7 @@ const Hero = () => {
         </Reveal>
         <Reveal slide className="w-fit my-10">
           <button className="relative border-[2px] border-neutral-900 dark:border-white px-8 py-4 rounded-full bg-white dark:bg-neutral-900 font-inter grid items-center justify-center text-black dark:text-white before:absolute before:content-[''] before:inset-0 before:translate-x-[-100%] hover:before:translate-x-0 before:translate-y-[100%] hover:before:translate-y-0 before:bg-black dark:before:bg-white hover:text-white dark:hover:text-neutral-900 before:rounded-full ring-offset-background transition-colors before:transition-transform before:duration-300 before:ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 overflow-hidden ">
-            <span className="z-1 grid grid-flow-col gap-2 items-center justify-center font-medium">
+            <span className="relative z-10 grid grid-flow-col gap-2 items-center justify-center font-medium">
               My Resume <ArrowUpRight />
             </span>
           </button>

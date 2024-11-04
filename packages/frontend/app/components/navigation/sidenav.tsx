@@ -126,16 +126,16 @@ const SideNav = () => {
 
   const scope = useMenuAnimation(open);
   return (
-    <div className="relative w-fit z-30" ref={scope}>
+    <div className="relative w-fit z-20" ref={scope}>
       <Hamburger active={open} onActiveChange={toggleNav} />
-      <NavigationMenu className="absolute top-0 right-0 -z-10 rounded-lg overflow-hidden ">
+      <NavigationMenu className="absolute top-0 right-0 rounded-lg overflow-hidden -z-10 ">
         <NavigationMenuList
           asChild
           className="flex-col items-start justify-start pl-2"
         >
           <motion.ul
             style={SIDENAV_VARIANTS.initial}
-            className={`overflow-hidden bg-[#FFB26F] dark:bg-blue-600 z-20 shadow-lg`}
+            className={`overflow-hidden bg-[#FFB26F] dark:bg-blue-600 shadow-lg`}
           >
             {navLinks.map((link) => (
               <NavigationMenuItem asChild key={link.id}>
