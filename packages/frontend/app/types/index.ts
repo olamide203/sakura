@@ -263,35 +263,38 @@ export type Experience = {
   publishedAt: string;
 };
 
-export type BlockContent = Array<{
-  children?: Array<{
-    marks?: Array<string>;
-    text?: string;
-    _type: "span";
-    _key: string;
-  }>;
-  style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
-  listItem?: "bullet";
-  markDefs?: Array<{
-    href?: string;
-    _type: "link";
-    _key: string;
-  }>;
-  level?: number;
-  _type: "block";
-  _key: string;
-} | {
-  asset?: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-  };
-  hotspot?: SanityImageHotspot;
-  crop?: SanityImageCrop;
-  _type: "image";
-  _key: string;
-}>;
+export type BlockContent = Array<
+  | {
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: "span";
+        _key: string;
+      }>;
+      style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
+      listItem?: "bullet";
+      markDefs?: Array<{
+        href?: string;
+        _type: "link";
+        _key: string;
+      }>;
+      level?: number;
+      _type: "block";
+      _key: string;
+    }
+  | {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+      _key: string;
+    }
+>;
 
 export type Category = {
   _id: string;
@@ -527,7 +530,33 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Portfolio | Social | Project | Technology | Experience | BlockContent | Category | Post | Author | Slug | Google | SiteSettings | Meta | OpenGraph | SiteMeta | Manifest | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
+export type AllSanitySchemaTypes =
+  | SanityImagePaletteSwatch
+  | SanityImagePalette
+  | SanityImageDimensions
+  | SanityFileAsset
+  | Geopoint
+  | Portfolio
+  | Social
+  | Project
+  | Technology
+  | Experience
+  | BlockContent
+  | Category
+  | Post
+  | Author
+  | Slug
+  | Google
+  | SiteSettings
+  | Meta
+  | OpenGraph
+  | SiteMeta
+  | Manifest
+  | SanityImageCrop
+  | SanityImageHotspot
+  | SanityImageAsset
+  | SanityAssetSourceData
+  | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ../frontend/app/sanity.ts
 // Variable: portfolioQuery
@@ -539,6 +568,7 @@ export type PortfolioQueryResult = {
   _updatedAt: string;
   _rev: string;
   name: string;
+  role: string;
   mainImage: {
     asset: {
       _id: string;
@@ -762,6 +792,6 @@ export type PortfolioQueryResult = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type==\"portfolio\"][0]{\n  ...,\n  mainImage { \n    ...,\n    asset->{\n      ...,\n    },\n  },\n  about[] {\n    ...,\n    markDefs[]-> {\n      ...,\n      \"slug\": select(_type == \"internalLink\" => @.reference->slug)\n    }\n  },\n  socialLinks[]-> {\n    account,\n    url,\n    username,\n    _id\n  },\n  projects[]-> {\n    ...,\n    mainImage { \n      ...,\n      asset->{ ..., }\n    },\n    description[] {\n      ...,\n      markDefs[]-> {\n        ...,\n        \"slug\": select(_type == \"internalLink\" => @.reference->slug)\n      }\n    },\n    technologies[]-> {\n      name,\n      _id \n    }\n  },\n  \"experiences\": *[_type == \"experience\"] | order(publishedAt desc){\n    ...,\n    skills[]-> {\n      name,\n      _id\n      },\n      }  ,\n  skills[]-> {\n    name,\n    link,\n    _id,\n    logo {\n      asset->{\n        ...,\n      }\n    }\n  },\n  metadata-> {\n    ...,\n    image { \n    ...,\n    asset->{\n      ...,\n    },\n  },\n  }\n}": PortfolioQueryResult;
+    '*[_type=="portfolio"][0]{\n  ...,\n  mainImage { \n    ...,\n    asset->{\n      ...,\n    },\n  },\n  about[] {\n    ...,\n    markDefs[]-> {\n      ...,\n      "slug": select(_type == "internalLink" => @.reference->slug)\n    }\n  },\n  socialLinks[]-> {\n    account,\n    url,\n    username,\n    _id\n  },\n  projects[]-> {\n    ...,\n    mainImage { \n      ...,\n      asset->{ ..., }\n    },\n    description[] {\n      ...,\n      markDefs[]-> {\n        ...,\n        "slug": select(_type == "internalLink" => @.reference->slug)\n      }\n    },\n    technologies[]-> {\n      name,\n      _id \n    }\n  },\n  "experiences": *[_type == "experience"] | order(publishedAt desc){\n    ...,\n    skills[]-> {\n      name,\n      _id\n      },\n      }  ,\n  skills[]-> {\n    name,\n    link,\n    _id,\n    logo {\n      asset->{\n        ...,\n      }\n    }\n  },\n  metadata-> {\n    ...,\n    image { \n    ...,\n    asset->{\n      ...,\n    },\n  },\n  }\n}': PortfolioQueryResult;
   }
 }

@@ -21,6 +21,14 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'role',
+      title: 'Role',
+      description: 'A role or job description that shows up on your portfolio',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
       name: 'about',
       title: 'About',
       type: 'array',
